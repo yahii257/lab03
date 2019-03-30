@@ -1,0 +1,15 @@
+void setup()
+{
+  Serial.begin(9600);
+}
+float Analogin=0,vin=0;
+void loop()
+{
+  for(int i=0;i<=5;i++)
+  {
+    float Analogin=0.7*Analogin+0.3*analogRead(A0);
+    float vin=Analogin*2.5/4095;
+    Serial.println(vin);
+    delay(100);
+  }
+}
